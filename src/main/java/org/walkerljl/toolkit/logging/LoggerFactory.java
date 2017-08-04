@@ -28,7 +28,7 @@ public class LoggerFactory {
 
     // 查找常用的日志框架
     static {
-        String logger = System.getProperty("orgwalkerljl.log");
+        String logger = System.getProperty("org.walkerljl.logging");
         if ("slf4j".equals(logger)) {
             setLoggerAdapter(new Slf4jLoggerAdapter());
         } else if ("jcl".equals(logger)) {
