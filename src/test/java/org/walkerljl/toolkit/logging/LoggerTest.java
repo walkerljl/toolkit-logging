@@ -7,7 +7,7 @@ public class LoggerTest {
     @Test
     public void test() {
 
-        Logger logger = LoggerFactory.getLogger(LoggerTest.class);
+        Logger logger = LoggerFactory.getLogger("test");
 
         logger.info(String.format("xxx"));
     }
