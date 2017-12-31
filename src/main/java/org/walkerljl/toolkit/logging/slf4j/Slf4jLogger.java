@@ -25,81 +25,6 @@ public class Slf4jLogger implements Logger, Serializable {
     }
 
     @Override
-    public void trace(String msg) {
-        logger.trace(msg);
-    }
-
-    @Override
-    public void trace(Throwable e) {
-        logger.trace(e.getMessage(), e);
-    }
-
-    @Override
-    public void trace(String msg, Throwable e) {
-        logger.trace(msg, e);
-    }
-
-    @Override
-    public void debug(String msg) {
-        logger.debug(msg);
-    }
-
-    @Override
-    public void debug(Throwable e) {
-        logger.debug(e.getMessage(), e);
-    }
-
-    @Override
-    public void debug(String msg, Throwable e) {
-        logger.debug(msg, e);
-    }
-
-    @Override
-    public void info(String msg) {
-        logger.info(msg);
-    }
-
-    @Override
-    public void info(Throwable e) {
-        logger.info(e.getMessage(), e);
-    }
-
-    @Override
-    public void info(String msg, Throwable e) {
-        logger.info(msg, e);
-    }
-
-    @Override
-    public void warn(String msg) {
-        logger.warn(msg);
-    }
-
-    @Override
-    public void warn(Throwable e) {
-        logger.warn(e.getMessage(), e);
-    }
-
-    @Override
-    public void warn(String msg, Throwable e) {
-        logger.warn(msg, e);
-    }
-
-    @Override
-    public void error(String msg) {
-        logger.error(msg);
-    }
-
-    @Override
-    public void error(Throwable e) {
-        logger.error(e.getMessage(), e);
-    }
-
-    @Override
-    public void error(String msg, Throwable e) {
-        logger.error(msg, e);
-    }
-
-    @Override
     public boolean isTraceEnabled() {
         return logger.isTraceEnabled();
     }
@@ -122,5 +47,55 @@ public class Slf4jLogger implements Logger, Serializable {
     @Override
     public boolean isErrorEnabled() {
         return logger.isErrorEnabled();
+    }
+
+    @Override
+    public void trace(Object message) {
+        logger.trace(String.valueOf(message));
+    }
+
+    @Override
+    public void trace(Object message, Throwable e) {
+        logger.trace(String.valueOf(message), e);
+    }
+
+    @Override
+    public void debug(Object message) {
+        logger.debug(String.valueOf(message));
+    }
+
+    @Override
+    public void debug(Object message, Throwable e) {
+        logger.debug(String.valueOf(message), e);
+    }
+
+    @Override
+    public void info(Object message) {
+        logger.info(String.valueOf(message));
+    }
+
+    @Override
+    public void info(Object message, Throwable e) {
+        logger.info(String.valueOf(message), e);
+    }
+
+    @Override
+    public void warn(Object message) {
+        logger.warn(String.valueOf(message));
+    }
+
+    @Override
+    public void warn(Object message, Throwable e) {
+        logger.warn(String.valueOf(message), e);
+    }
+
+    @Override
+    public void error(Object message) {
+        logger.error(String.valueOf(message));
+    }
+
+    @Override
+    public void error(Object message, Throwable e) {
+        logger.error(String.valueOf(message), e);
     }
 }

@@ -1,159 +1,141 @@
-/*
- * Copyright (c) 2013 lijunlin All Rights Reserved.
- * 本软件源代码版权归作者所有,未经许可不得任意复制与传播.
- */
 package org.walkerljl.toolkit.logging;
 
 /**
- * 日志接口
- *
- * @author lijunlin
- * @since 2014-2-12
+ * @author xingxun
  */
 public interface Logger {
 
-    /**
-     * 输出跟踪信息
-     *
-     * @param msg 信息内容
-     */
-    void trace(String msg);
+    // ----------------------------------------------------- Logging Properties
 
     /**
-     * 输出跟踪信息
+     * <p> Is trace logging currently enabled? </p>
      *
-     * @param e 异常信息
-     */
-    void trace(Throwable e);
-
-    /**
-     * 输出跟踪信息
+     * <p> Call this method to prevent having to perform expensive operations
+     * (for example, <code>String</code> concatenation)
+     * when the log level is more than trace. </p>
      *
-     * @param msg 信息内容
-     * @param e   异常信息
-     */
-    void trace(String msg, Throwable e);
-
-    /**
-     * 输出调试信息
-     *
-     * @param msg 信息内容
-     */
-    void debug(String msg);
-
-    /**
-     * 输出调试信息
-     *
-     * @param e 异常信息
-     */
-    void debug(Throwable e);
-
-    /**
-     * 输出调试信息
-     *
-     * @param msg 信息内容
-     * @param e   异常信息
-     */
-    void debug(String msg, Throwable e);
-
-    /**
-     * 输出普通信息
-     *
-     * @param msg 信息内容
-     */
-    void info(String msg);
-
-    /**
-     * 输出普通信息
-     *
-     * @param e 异常信息
-     */
-    void info(Throwable e);
-
-    /**
-     * 输出普通信息
-     *
-     * @param msg 信息内容
-     * @param e   异常信息
-     */
-    void info(String msg, Throwable e);
-
-    /**
-     * 输出警告信息
-     *
-     * @param msg 信息内容
-     */
-    void warn(String msg);
-
-    /**
-     * 输出警告信息
-     *
-     * @param e 异常信息
-     */
-    void warn(Throwable e);
-
-    /**
-     * 输出警告信息
-     *
-     * @param msg 信息内容
-     * @param e   异常信息
-     */
-    void warn(String msg, Throwable e);
-
-    /**
-     * 输出错误信息
-     *
-     * @param msg 信息内容
-     */
-    void error(String msg);
-
-    /**
-     * 输出错误信息
-     *
-     * @param e 异常信息
-     */
-    void error(Throwable e);
-
-    /**
-     * 输出错误信息
-     *
-     * @param msg 信息内容
-     * @param e   异常信息
-     */
-    void error(String msg, Throwable e);
-
-    /**
-     * 跟踪信息是否开启
-     *
-     * @return 开启：true;关闭：false
+     * @return true if trace is enabled in the underlying logger.
      */
     boolean isTraceEnabled();
 
     /**
-     * 调试信息是否开启
+     * <p> Is debug logging currently enabled? </p>
      *
-     * @return 开启：true;关闭：false
+     * <p> Call this method to prevent having to perform expensive operations
+     * (for example, <code>String</code> concatenation)
+     * when the log level is more than debug. </p>
+     *
+     * @return true if debug is enabled in the underlying logger.
      */
     boolean isDebugEnabled();
 
     /**
-     * 普通信息是否开启
+     * <p> Is info logging currently enabled? </p>
      *
-     * @return 开启：true;关闭：false
+     * <p> Call this method to prevent having to perform expensive operations
+     * (for example, <code>String</code> concatenation)
+     * when the log level is more than info. </p>
+     *
+     * @return true if info is enabled in the underlying logger.
      */
     boolean isInfoEnabled();
 
     /**
-     * 警告信息是否开启
+     * <p> Is warn logging currently enabled? </p>
      *
-     * @return 开启：true;关闭：false
+     * <p> Call this method to prevent having to perform expensive operations
+     * (for example, <code>String</code> concatenation)
+     * when the log level is more than warn. </p>
+     *
+     * @return true if warn is enabled in the underlying logger.
      */
     boolean isWarnEnabled();
 
     /**
-     * 错误信息是否开启
+     * <p> Is error logging currently enabled? </p>
      *
-     * @return 开启：true;关闭：false
+     * <p> Call this method to prevent having to perform expensive operations
+     * (for example, <code>String</code> concatenation)
+     * when the log level is more than error. </p>
+     *
+     * @return true if error is enabled in the underlying logger.
      */
     boolean isErrorEnabled();
+
+    // -------------------------------------------------------- Logging Methods
+
+    /**
+     * <p> Log a message with trace log level. </p>
+     *
+     * @param message log this message
+     */
+    void trace(Object message);
+
+    /**
+     * <p> Log an error with trace log level. </p>
+     *
+     * @param message log this message
+     * @param e log this cause
+     */
+    void trace(Object message, Throwable e);
+
+    /**
+     * <p> Log a message with debug log level. </p>
+     *
+     * @param message log this message
+     */
+    void debug(Object message);
+
+    /**
+     * <p> Log an error with debug log level. </p>
+     *
+     * @param message log this message
+     * @param e log this cause
+     */
+    void debug(Object message, Throwable e);
+
+    /**
+     * <p> Log a message with info log level. </p>
+     *
+     * @param message log this message
+     */
+    void info(Object message);
+
+    /**
+     * <p> Log an error with info log level. </p>
+     *
+     * @param message log this message
+     * @param e log this cause
+     */
+    void info(Object message, Throwable e);
+
+    /**
+     * <p> Log a message with warn log level. </p>
+     *
+     * @param message log this message
+     */
+    void warn(Object message);
+
+    /**
+     * <p> Log an error with warn log level. </p>
+     *
+     * @param message log this message
+     * @param e log this cause
+     */
+    void warn(Object message, Throwable e);
+
+    /**
+     * <p> Log a message with error log level. </p>
+     *
+     * @param message log this message
+     */
+    void error(Object message);
+
+    /**
+     * <p> Log an error with error log level. </p>
+     *
+     * @param message log this message
+     * @param e log this cause
+     */
+    void error(Object message, Throwable e);
 }

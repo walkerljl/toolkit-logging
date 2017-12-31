@@ -28,81 +28,6 @@ public class JclLogger implements Logger, Serializable {
     }
 
     @Override
-    public void trace(String msg) {
-        this.logger.trace(msg);
-    }
-
-    @Override
-    public void trace(Throwable e) {
-        this.logger.trace(e);
-    }
-
-    @Override
-    public void trace(String msg, Throwable e) {
-        this.logger.trace(msg, e);
-    }
-
-    @Override
-    public void debug(String msg) {
-        this.logger.debug(msg);
-    }
-
-    @Override
-    public void debug(Throwable e) {
-        this.logger.debug(e);
-    }
-
-    @Override
-    public void debug(String msg, Throwable e) {
-        this.logger.debug(msg, e);
-    }
-
-    @Override
-    public void info(String msg) {
-        this.logger.info(msg);
-    }
-
-    @Override
-    public void info(Throwable e) {
-        this.logger.info(e);
-    }
-
-    @Override
-    public void info(String msg, Throwable e) {
-        this.logger.info(msg, e);
-    }
-
-    @Override
-    public void warn(String msg) {
-        this.logger.warn(msg);
-    }
-
-    @Override
-    public void warn(Throwable e) {
-        this.logger.warn(e);
-    }
-
-    @Override
-    public void warn(String msg, Throwable e) {
-        this.logger.warn(msg, e);
-    }
-
-    @Override
-    public void error(String msg) {
-        this.logger.error(msg);
-    }
-
-    @Override
-    public void error(Throwable e) {
-        this.logger.error(e);
-    }
-
-    @Override
-    public void error(String msg, Throwable e) {
-        this.logger.error(msg, e);
-    }
-
-    @Override
     public boolean isTraceEnabled() {
         return this.logger.isTraceEnabled();
     }
@@ -125,5 +50,55 @@ public class JclLogger implements Logger, Serializable {
     @Override
     public boolean isErrorEnabled() {
         return this.logger.isErrorEnabled();
+    }
+
+    @Override
+    public void trace(Object message) {
+        this.logger.trace(message);
+    }
+
+    @Override
+    public void trace(Object message, Throwable e) {
+        this.logger.trace(message, e);
+    }
+
+    @Override
+    public void debug(Object message) {
+        this.logger.debug(message);
+    }
+
+    @Override
+    public void debug(Object message, Throwable e) {
+        this.logger.debug(message, e);
+    }
+
+    @Override
+    public void info(Object message) {
+        this.logger.info(message);
+    }
+
+    @Override
+    public void info(Object message, Throwable e) {
+        this.logger.info(message, e);
+    }
+
+    @Override
+    public void warn(Object message) {
+        this.logger.warn(message);
+    }
+
+    @Override
+    public void warn(Object message, Throwable e) {
+        this.logger.warn(message, e);
+    }
+
+    @Override
+    public void error(Object message) {
+        this.logger.error(message);
+    }
+
+    @Override
+    public void error(Object message, Throwable e) {
+        this.logger.error(message, e);
     }
 }

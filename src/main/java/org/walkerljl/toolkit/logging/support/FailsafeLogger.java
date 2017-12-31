@@ -28,134 +28,6 @@ public class FailsafeLogger implements Logger {
         this.logger = logger;
     }
 
-    private String appendContextMessage(String msg) {
-        //		StringBuilder sb = new StringBuilder();
-        //			sb.append(" [JARVIS] ").append(msg).append(", jarvis version: ").append(Version.getVersion());
-        //			sb.append(", current host: ").append(NetUtils.getLogHost());
-        //		return sb.toString();
-        return msg;
-    }
-
-    @Override
-    public void trace(String msg) {
-        try {
-            this.logger.trace(appendContextMessage(msg));
-        } catch (Throwable e) {
-        }
-    }
-
-    @Override
-    public void trace(Throwable e) {
-        try {
-            this.logger.trace(e);
-        } catch (Throwable ex) {
-        }
-    }
-
-    @Override
-    public void trace(String msg, Throwable e) {
-        try {
-            this.logger.trace(appendContextMessage(msg), e);
-        } catch (Throwable ex) {
-        }
-    }
-
-    @Override
-    public void debug(String msg) {
-        try {
-            this.logger.debug(appendContextMessage(msg));
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public void debug(Throwable e) {
-        try {
-            this.logger.debug(e);
-        } catch (Exception ex) {
-        }
-    }
-
-    @Override
-    public void debug(String msg, Throwable e) {
-        try {
-            this.logger.debug(appendContextMessage(msg), e);
-        } catch (Exception ex) {
-        }
-    }
-
-    @Override
-    public void info(String msg) {
-        try {
-            this.logger.info(appendContextMessage(msg));
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public void info(Throwable e) {
-        try {
-            this.logger.info(e);
-        } catch (Exception ex) {
-        }
-    }
-
-    @Override
-    public void info(String msg, Throwable e) {
-        try {
-            this.logger.info(appendContextMessage(msg), e);
-        } catch (Exception ex) {
-        }
-    }
-
-    @Override
-    public void warn(String msg) {
-        try {
-            this.logger.warn(appendContextMessage(msg));
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public void warn(Throwable e) {
-        try {
-            this.logger.warn(e);
-        } catch (Exception ex) {
-        }
-    }
-
-    @Override
-    public void warn(String msg, Throwable e) {
-        try {
-            this.logger.warn(appendContextMessage(msg), e);
-        } catch (Exception ex) {
-        }
-    }
-
-    @Override
-    public void error(String msg) {
-        try {
-            this.logger.error(appendContextMessage(msg));
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public void error(Throwable e) {
-        try {
-            this.logger.error(e);
-        } catch (Exception ex) {
-        }
-    }
-
-    @Override
-    public void error(String msg, Throwable e) {
-        try {
-            this.logger.error(appendContextMessage(msg), e);
-        } catch (Exception ex) {
-        }
-    }
-
     @Override
     public boolean isTraceEnabled() {
         try {
@@ -199,5 +71,93 @@ public class FailsafeLogger implements Logger {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    @Override
+    public void trace(Object message) {
+        try {
+            this.logger.trace(appendContextMessage(message));
+        } catch (Throwable e) {
+        }
+    }
+
+    @Override
+    public void trace(Object message, Throwable e) {
+        try {
+            this.logger.trace(appendContextMessage(message), e);
+        } catch (Throwable ex) {
+        }
+    }
+
+    @Override
+    public void debug(Object message) {
+        try {
+            this.logger.debug(appendContextMessage(message));
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public void debug(Object message, Throwable e) {
+        try {
+            this.logger.debug(appendContextMessage(message), e);
+        } catch (Exception ex) {
+        }
+    }
+
+    @Override
+    public void info(Object message) {
+        try {
+            this.logger.info(appendContextMessage(message));
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public void info(Object message, Throwable e) {
+        try {
+            this.logger.info(appendContextMessage(message), e);
+        } catch (Exception ex) {
+        }
+    }
+
+    @Override
+    public void warn(Object message) {
+        try {
+            this.logger.warn(appendContextMessage(message));
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public void warn(Object message, Throwable e) {
+        try {
+            this.logger.warn(appendContextMessage(message), e);
+        } catch (Exception ex) {
+        }
+    }
+
+    @Override
+    public void error(Object message) {
+        try {
+            this.logger.error(appendContextMessage(message));
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public void error(Object message, Throwable e) {
+        try {
+            this.logger.error(appendContextMessage(message), e);
+        } catch (Exception ex) {
+        }
+    }
+
+    private String appendContextMessage(Object message) {
+        //		StringBuilder sb = new StringBuilder();
+        //			sb.append(" [JARVIS] ").append(msg).append(", jarvis version: ").append(Version.getVersion());
+        //			sb.append(", current host: ").append(NetUtils.getLogHost());
+        //		return sb.toString();
+        return message.toString();
     }
 }
