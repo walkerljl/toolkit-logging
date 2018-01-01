@@ -4,16 +4,16 @@
  */
 package org.walkerljl.toolkit.logging;
 
-import java.io.File;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
 import org.walkerljl.toolkit.logging.jcl.JclLoggerAdapter;
 import org.walkerljl.toolkit.logging.jdk.JdkLoggerAdapter;
 import org.walkerljl.toolkit.logging.log4j.Log4jLoggerAdapter;
 import org.walkerljl.toolkit.logging.slf4j.Slf4jLoggerAdapter;
 import org.walkerljl.toolkit.logging.support.FailsafeLogger;
+
+import java.io.File;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * 日志对象工厂
@@ -54,8 +54,7 @@ public class LoggerFactory {
         }
     }
 
-    private LoggerFactory() {
-    }
+    private LoggerFactory() {}
 
     public static void setLoggerAdapter(String loggerAdapter) {
         if (loggerAdapter != null && loggerAdapter.length() > 0) {

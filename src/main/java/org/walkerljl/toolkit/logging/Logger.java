@@ -1,6 +1,8 @@
 package org.walkerljl.toolkit.logging;
 
 /**
+ * Logger
+ *
  * @author xingxun
  */
 public interface Logger {
